@@ -1,13 +1,52 @@
+// React Import
+import React, { useState, useEffect, useRef } from "react";
+
+// Layout Import
 import MainLayout from "../components/content/MainLayout";
 import ValueableCustomer from "../components/carosel/ValueableCustomer";
-import Aos from "aos";
-import React, { useState, useEffect } from "react";
 import DiscoverOurExpertise from "../components/carosel/DiscoverOurExpertise";
-import CountUp from "react-countup";
 import MyModal from "../components/modal/mymodal";
 import ScrollToTop from "../components/footer/ScrollToTop";
+
+// Third Party App
+import Aos from "aos";
+import CountUp from "react-countup";
 import MessengerCustomerChat from "react-messenger-customer-chat";
+
+  // Main function starts 
 export default function Home() {
+
+  // Reference for From
+  const selectedOption = useRef();
+  const emailInputRef = useRef();
+
+  // State for Selected value
+  const [value, setValue] = useState('');
+  const handleSelect = (e) => {
+  const selectedValue = e.target.value;
+  console.log("Value Selected", selectedValue);
+  setValue(selectedValue);
+  }
+
+  // FROM Handler
+  function submitFromHandler(event) {
+    event.preventDefault();
+    const enteredEmail =  emailInputRef.current.value;
+    const selectQuery = value;
+    const reqBody = { email: enteredEmail, selectedValue : selectQuery } 
+
+    fetch('/api/user', {
+      method : 'POST',
+      body :  JSON.stringify(reqBody),
+      headers : {
+        'Content-Type' : 'application/json'
+      }
+
+    })
+    .then ( (res)  => res.json())
+    .then ( (data) => console.log(data));
+  }
+
   const [show, setShow] = useState(false);
   useEffect(() => {
     checkAndValidateModal();
@@ -55,6 +94,8 @@ export default function Home() {
               <a href="https://www.bluepill.com.bd/consulting">Our services</a>
             </div>
           </div>
+
+
           {/* Modal React Bootstrap  Start */}
           <div className="modal__cont">
             <div>
@@ -66,8 +107,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Modal React Bootstrap Start */}
-          {/* HOme Page Ends */}
           {/* Driving Result  Starts*/}
           <div className="container home__pb driving__result">
             <div className="row text-center">
@@ -176,6 +215,7 @@ export default function Home() {
             </div>
           </div>
           {/* Driving Result Ends */}
+
           {/* Driving Results starts */}
           <div className="container driving__result__img">
             <div className="row  justify-content-center">
@@ -231,6 +271,8 @@ export default function Home() {
             </div>
           </div>
           {/* Driving Results Ends */}
+
+
           {/*  Industries  */}
           <div className="industries">
             <div className="container">
@@ -286,7 +328,7 @@ export default function Home() {
             </div>
           </div>
           {/* Discover Our Expertise Ends */}
-         
+
           {/* Our Valueable Customer */}
           <div className="container news__area">
             <div className="row valuable__customer">
@@ -298,38 +340,46 @@ export default function Home() {
             <ValueableCustomer />
           </div>
           {/* News  Ends */}
+
           {/* Lets Build Together Starts */}
           <div className="lets__build__together">
             <div className="container">
               <div className="row justify-content-lg-center">
-               
+
                 <div className="col-lg-7 col-12 ">
                   <div className="build__something__design">
                     <h4>
                       Let's build something <br /> together.
                     </h4>
                     <p>To drive extraordinary results in your business?</p>
-                    <form>
+
+                    <form onSubmit={submitFromHandler}>
                       <div class="row">
                         <div class="col-lg-4 col-12">
                           <label for="exampleInputEmail1">
                             I want to talk to your experts in:
                           </label>
-                          <select class="custom-select">
+
+                          <select class="custom-select" value="Travel" onChange={handleSelect}>
                             <option selected>Select an Industry</option>
-                            <option value="1">
+                            <option value="Consumer Goods & Distribution">
                               Consumer Goods & Distribution
                             </option>
-                            <option value="2">Travel & Tourism</option>
-                            <option value="3">Retail</option>
+                            <option value="Travel & Tourism">Travel & Tourism</option>
+                            <option value="Retail">Retail</option>
                           </select>
+
                         </div>
+
+
                         <div class="col-lg-4 col-12">
-                          <label for="exampleInputEmail1">Your Email</label>
+                          <label htmlfor="email">Your Email</label>
                           <input
                             type="text"
                             class="form-control"
                             placeholder="Email"
+                            id="email"
+                            ref={emailInputRef}
                           />
                         </div>
                       </div>
@@ -344,6 +394,8 @@ export default function Home() {
                         </div>
                       </div>
                     </form>
+
+
                   </div>
                 </div>
                 {/* <div className="col-lg-4 col-12">
@@ -360,7 +412,7 @@ export default function Home() {
           </div>
           {/* Lets Build Together Ends */}
 
-         
+
 
           <ScrollToTop />
         </>

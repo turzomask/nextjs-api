@@ -19,10 +19,7 @@ export default function MyModal({ show, close }) {
       </div>
       <div className="modal-content">
         <div className="modal-body">
-          <video className="modal__video"  autoplay="autoplay" controls>
-            <source src="img/modal.mp4" type="video/mp4" />
-            Your browser is not supported!
-          </video>
+          
         </div>
         {/* <div className="modal-footer">
           <button onClick={close} className="btn-cancel">
