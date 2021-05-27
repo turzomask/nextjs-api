@@ -40,8 +40,11 @@ const HeaderNav = (props) => {
       <div className="container-fluid navbar__main">
         <div className="row">
           <div className="col-12">
+
+
             <Navbar expand="lg" className={navbar} fixed="top">
-              {/* <div className="container bg-danger"> */}
+            
+            
                 <Navbar.Brand href="/">
                   <img
                     src={
@@ -53,6 +56,7 @@ const HeaderNav = (props) => {
                   />
   
                 </Navbar.Brand>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse
                   id="responsive-navbar-nav"
@@ -401,6 +405,8 @@ const HeaderNav = (props) => {
                 </Navbar.Collapse>
               {/* </div> */}
             </Navbar>
+
+
           </div>
         </div>
       </div>

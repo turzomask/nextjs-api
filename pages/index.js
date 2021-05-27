@@ -176,9 +176,6 @@ export default function Home() {
             </div>
           </div>
           {/* Driving Result Ends */}
-
-          
-  
           {/* Driving Results starts */}
           <div className="container driving__result__img">
             <div className="row  justify-content-center">
@@ -305,7 +302,7 @@ export default function Home() {
           <div className="lets__build__together">
             <div className="container">
               <div className="row justify-content-lg-center">
-                <div className="col-lg-1"></div>
+               
                 <div className="col-lg-7 col-12 ">
                   <div className="build__something__design">
                     <h4>
@@ -349,7 +346,7 @@ export default function Home() {
                     </form>
                   </div>
                 </div>
-                <div className="col-lg-4 col-12">
+                {/* <div className="col-lg-4 col-12">
                   <div className="character__img">
                     <img
                       src="/img/unclesam.png"
@@ -357,54 +354,13 @@ export default function Home() {
                       className="contact__img"
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           {/* Lets Build Together Ends */}
 
-          {/* Proud full member */}
-
-          <div className="member__area">
-            <div className="container">
-              <div className="row justify-content-center member__img">
-                <div className="col-lg-8 col-sm-6">
-                  <div className="proud__member pl-2">
-                    <p>We are proud </p>
-                    <h4>Member of </h4>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-lg-4 col-6">
-                      {" "}
-                      <img
-                        src="/img/bacco.png"
-                        alt="blue pill"
-                        className="bacco"
-                      />
-                    </div>
-                    <div className="col-6">
-                      {" "}
-                      <img
-                        src="/img/basis.png"
-                        alt="blue pill"
-                        className="basis"
-                      />{" "}
-                    </div>
-                  </div>
-                </div>
-            
-                <div className="col-lg-3 col-12">
-                  <div className="proud__member proud__mem__pb ">
-                    <p>We are </p>
-                    <h4>Certified by </h4>
-                  </div>
-                  <img src="/img/brtc.png" alt="blue pill" className="btrc" />
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Proud full member */}
+         
 
           <ScrollToTop />
         </>
