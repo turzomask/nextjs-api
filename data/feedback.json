@@ -1,1 +1,22 @@
-[{"email":"muhib886@gmail.com","queryType":"Travel & Tourism"},{"email":"muhib886@gmail.com","queryType":"Travel & Tourism"},{"email":"muhib886@gmail.com","queryType":"Retail"},{"email":"turzo@gmail.com","queryType":"Retail"},{"email":"turzo@gmail.com","queryType":"Consumer Goods & Distribution"},{"email":"turzo@gmail.com","queryType":"Travel & Tourism"}]
+[
+    {
+        "email": "muhib886@gmail.com",
+        "queryType": "Travel & Tourism"
+    },
+    {
+        "email": "muhib886@gmail.com",
+        "queryType": "Travel & Tourism"
+    },
+    {
+        "email": "muhib886@gmail.com",
+        "queryType": "Retail"
+    },
+    {
+        "email": "turzo@gmail.com",
+        "queryType": "Retail"
+    },
+    {
+        "email": "turzo@gmail.com",
+        "queryType": "Consumer Goods & Distribution"
+    }
+]
