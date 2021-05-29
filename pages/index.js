@@ -41,13 +41,19 @@ export default function Home() {
       headers : {
         'Content-Type' : 'application/json'
       }
-
     })
     .then ( (res)  => res.json())
     .then ( (data) => console.log(data));
-
-    
   }
+
+
+function loadFeedbackHandler() {
+  fetch('/api/user')
+  .then ( (res)  => res.json())
+  .then ( (data) => console.log(data));
+}
+
+
 
   const [show, setShow] = useState(false);
   useEffect(() => {

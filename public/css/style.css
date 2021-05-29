@@ -1923,3 +1923,17 @@ margin-bottom: 0px !important;
 }
 /* Index Page Last Section   */
 
+/* iAPP Start */
+
+.iapp__body{
+background-color:lightcyan;
+width: 100%;
+height: 100vh;
+
+}
+.list__container{
+  padding-top: 10%;
+}
+
+
+/* iAPP Ends */
